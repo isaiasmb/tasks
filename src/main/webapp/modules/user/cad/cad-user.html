@@ -1,0 +1,41 @@
+<form name="userForm">
+	<div class="modal-header">
+		<h3 class="modal-title">Cadastro de Usuário</h3>
+	</div>
+	<div class="modal-body">
+
+		<div class="form-body">
+			<div class="row">
+				<div class="col-md-6">
+					<div
+						ng-show="userForm.name.$dirty && userForm.name.$error.required">
+						<div ng-message="required" class="alert alert-danger">Por favor preencha o nome!</div>
+					</div>
+					<div class="form-group">
+						<label>Nome *</label> <input name="name" ng-required="true"
+							ng-model="CadUserCtrl.user.name" type="text" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label>Email *</label> <input ng-model="CadUserCtrl.user.email"
+							type="text" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Username *</label> <input name="username" ng-required="true"
+							ng-model="CadUserCtrl.user.username" type="text" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label>Senha *</label> <input name="password" ng-required="true"
+							ng-model="CadUserCtrl.user.password" type="password" class="form-control" />
+					</div>					
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-click="CadUserCtrl.ok()" ng-disabled="userForm.$invalid">Salvar</button>
+		<button class="btn btn-warning" type="button" ng-click="CadUserCtrl.cancel()">Cancelar</button>
+	</div>
+</form>

@@ -1,0 +1,30 @@
+.main-app > .ng-scope {
+    position: inherit;
+    margin: 0 0 0 250px;
+    padding: 0 30px;
+    border-left: 1px solid #e7e7e7;
+}
+
+.cad-header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5px;
+}
+
+.fixed .modal-dialog{
+  position: fixed;
+  top:0; 
+  right: 0;
+  margin: auto;
+}
+
+/*Modal*/
+.modal-open {
+    overflow: initial !important;
+}
+
+.fixed {
+    width: 0 !important;
+}

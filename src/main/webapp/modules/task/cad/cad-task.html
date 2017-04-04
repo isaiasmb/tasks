@@ -1,0 +1,48 @@
+<form name="taskForm">
+	<div class="modal-header">
+		<h3 class="modal-title">Cadastro de Tarefa</h3>
+	</div>
+	<div class="modal-body">
+
+		<div class="form-body">
+			<div class="row">
+				<div class="col-md-6">
+					<div
+						ng-show="taskForm.name.$dirty && taskForm.name.$error.required">
+						<div ng-message="required" class="alert alert-danger">Por favor preencha o nome!</div>
+					</div>
+					<div class="form-group">
+						<label>Nome *</label> <input name="name" ng-required="true"
+							ng-model="CadTaskCtrl.task.name" type="text" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label>Esforço *</label> <input ng-model="CadTaskCtrl.task.effort"
+							type="text" class="form-control" placeholder="Esforço em horas" />
+					</div>
+
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Responsável *</label> <select class="form-control"
+							ng-options="user.name for user in CadTaskCtrl.users track by user.id"
+							ng-model="CadTaskCtrl.task.user">
+							<option value="">Escolha um responsável</option>
+						</select>
+
+					</div>
+					<div class="form-group">
+						<label>Descrição</label>
+						<textarea ng-model="CadTaskCtrl.task.description" type="text" class="form-control" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button"
+			ng-click="CadTaskCtrl.ok()" ng-disabled="taskForm.$invalid">Salvar</button>
+		<button class="btn btn-warning" type="button"
+			ng-click="CadTaskCtrl.cancel()">Cancelar</button>
+	</div>
+</form>
